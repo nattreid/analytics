@@ -1,0 +1,15 @@
+{block title}{_'analytics.tracking.visits'}{/block}
+{block content}
+    {panel id => analytics-visitsCharts, class => analytics-extension}
+        {control searchForm}
+        <br/>
+        {snippet stats}
+            <h2>{_'analytics.tracking.visitsByDay'}</h2>
+            <canvas id="visitsByDay" data-title="{_'analytics.tracking.visits'}" data-data="{$visitsByDay}" height="{$user->isMobile() ? 100 : 50}"></canvas>
+            <h2>{_'analytics.tracking.visitsByHour'}</h2>
+            <canvas id="visitsByHour" data-title="{_'analytics.tracking.visits'}" data-data="{$visitsByHour}" height="{$user->isMobile() ? 100 : 50}"></canvas>
+            <script type="text/javascript" n:if="$presenter->isAjax()">
+                VisitsCharts.init();
+            </script>
+        {/snippet}
+    {/panel}

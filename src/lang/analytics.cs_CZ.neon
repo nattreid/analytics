@@ -1,0 +1,18 @@
+title: 'Analytics'
+interval: 'Období'
+
+tracking:
+    title: "Sledování webu"
+    pageVisits: "Návštěvy stránek"
+    clickTracking: "Kliky"
+    visits: "Návštevy"
+    visitsByDay: "Počet návštev po dnech"
+    visitsByHour: "Počet návštev po hodinách"
+    page: "Stránka"
+    countVisits: "Počet návštev"
+    countViews: "Počet zobrazení"
+    clicksByDay: "Počet kliků po dnech"
+    clickGroup: "Skupina"
+    clicks: "Kliky"
+    avg: "Průměrná hodnota"
+    sum: "Celková hodnota"

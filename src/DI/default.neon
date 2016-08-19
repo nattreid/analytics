@@ -1,0 +1,12 @@
+link: 'Homepage:'
+position: 2
+
+menu:
+    tracking:
+        visits:
+            link: ''
+        pageVisits:
+            link: ''
+            arguments: [interval: NULL]
+        clickTracking:
+            link: ''

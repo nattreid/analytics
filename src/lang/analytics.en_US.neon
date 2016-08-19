@@ -1,0 +1,18 @@
+title: 'Analytics'
+interval: 'Interval'
+
+tracking:
+    title: "Web tracking"
+    pageVisits: "Návštěvy stránek"
+    clickTracking: "Kliky"
+    visits: "Visits"
+    visitsByDay: "Visits by day"
+    visitsByHour: "Visits by hour"
+    page: "Page"
+    countVisits: "Count visits"
+    countViews: "Count views"
+    clicksByDay: "Clicks by day"
+    clickGroup: "Group"
+    clicks: "Clicks"
+    avg: "Average value"
+    sum: "Total value"

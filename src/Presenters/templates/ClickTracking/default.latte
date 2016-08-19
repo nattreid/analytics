@@ -1,0 +1,24 @@
+{block title}{_'analytics.tracking.clickTracking'}{/block}
+{block content}
+    {panel id => analytics-clickCharts, class => analytics-extension}
+        {control searchForm}
+        <br/>
+        {snippet stats}
+            {if $view}
+                <h2>{_'analytics.tracking.clicksByDay'}</h2>
+                <canvas 
+                    id="clicks"
+                    class="chart"
+                    data-clicks-title="{_'analytics.tracking.clicks'}"
+                    data-clicks="{$clicks}"
+                    data-sum-title="{_'analytics.tracking.sum'}"
+                    data-sum="{$sum}"
+                    data-avg-title="{_'analytics.tracking.avg'}"
+                    data-avg="{$avg}"
+                    height="50"></canvas>
+                <script type="text/javascript" n:if="$presenter->isAjax()">
+                    ClickTracking.init();
+                </script>
+            {/if}
+        {/snippet}
+    {/panel}
