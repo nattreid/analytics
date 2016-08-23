@@ -13,7 +13,9 @@
         "*.json"
     ],
     "dependencies": {
-        "crm": "git@git.newtravel.cz:nattreid/crm.git#latest"
+        "crm": "git@git.newtravel.cz:nattreid/crm.git#latest",
+        "tracking": "git@git.newtravel.cz:nattreid/tracking.git#~1.0",
+        "Chart.js": "~2.1"
     },
     "resolutions": {
         "nette.ajax.js": "~2.1"
