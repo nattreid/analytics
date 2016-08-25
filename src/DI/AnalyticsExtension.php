@@ -15,8 +15,8 @@ class AnalyticsExtension extends \NAttreid\Crm\DI\ModuleExtension {
 
     public function beforeCompile() {
         parent::beforeCompile();
-        $this->addLoaderFile(__DIR__ . '/../../assets/analyitcs.min.css');
-        $this->addLoaderFile(__DIR__ . '/../../assets/analyitcs.boundled.min.js');
+        $this->addLoaderFile(__DIR__ . '/../../assets/analytics.min.css');
+        $this->addLoaderFile(__DIR__ . '/../../assets/analytics.boundled.min.js');
     }
 
 }
