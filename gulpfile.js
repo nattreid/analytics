@@ -16,7 +16,7 @@ var paths = {
 gulp.task('css', function () {
     return gulp.src(paths.dev.less + '*.less')
             .pipe(less())
-            .pipe(concat('analyitcs.css'))
+            .pipe(concat('analytics.css'))
             .pipe(gulp.dest(paths.production));
 });
 
@@ -24,7 +24,7 @@ gulp.task('cssMin', function () {
     return gulp.src(paths.dev.less + '*.less')
             .pipe(less())
             .pipe(minify({keepSpecialComments: 0}))
-            .pipe(concat('analyitcs.min.css'))
+            .pipe(concat('analytics.min.css'))
             .pipe(gulp.dest(paths.production));
 });
 
