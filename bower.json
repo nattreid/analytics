@@ -1,23 +1,26 @@
 {
-    "name": "analytics",
-    "description": "Analytics for CRM",
-    "license": ["Unlicense"],
-    "authors": [
-        {
-            "name": "Attreid",
-            "email": "attreid@gmail.com"
-        }
-    ],
-    "ignore": [
-        "src",
-        "*.json"
-    ],
-    "dependencies": {
-        "crm": "git@git.newtravel.cz:nattreid/crm.git#latest",
-        "tracking": "git@git.newtravel.cz:nattreid/tracking.git#~1.0",
-        "Chart.js": "~2.1"
-    },
-    "resolutions": {
-        "nette.ajax.js": "~2.1"
+  "name": "analytics",
+  "description": "Analytics for CRM",
+  "license": [
+    "Unlicense"
+  ],
+  "authors": [
+    {
+      "name": "Attreid",
+      "email": "attreid@gmail.com"
     }
+  ],
+  "ignore": [
+    "src",
+    "*.json"
+  ],
+  "dependencies": {
+    "crm": "git@git.newtravel.cz:nattreid/crm.git#latest",
+    "tracking": "git@git.newtravel.cz:nattreid/tracking.git#~1.0",
+    "Chart.js": "~2.1"
+  },
+  "resolutions": {
+    "nette.ajax.js": "~2.1",
+    "nette-forms": "2.2 || 2.3"
+  }
 }
