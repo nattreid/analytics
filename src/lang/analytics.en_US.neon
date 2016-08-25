@@ -3,8 +3,8 @@ interval: 'Interval'
 
 tracking:
     title: "Web tracking"
-    pageVisits: "Návštěvy stránek"
-    clickTracking: "Kliky"
+    pageVisits: "Page visits"
+    clickTracking: "Clicks"
     visits: "Visits"
     visitsByDay: "Visits by day"
     visitsByHour: "Visits by hour"
