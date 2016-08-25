@@ -13,4 +13,10 @@ class AnalyticsExtension extends \NAttreid\Crm\DI\ModuleExtension {
     protected $dir = __DIR__;
     protected $package = 'NAttreid\\';
 
+    public function beforeCompile() {
+        parent::beforeCompile();
+        $this->addLoaderFile(__DIR__ . '/../../assets/analyitcs.min.css');
+        $this->addLoaderFile(__DIR__ . '/../../assets/analyitcs.boundled.min.js');
+    }
+
 }
