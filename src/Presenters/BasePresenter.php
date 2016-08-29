@@ -7,7 +7,7 @@ namespace NAttreid\Analytics\Presenters;
  * 
  * @author Attreid <attreid@gmail.com>
  */
-abstract class BasePresenter extends \NAttreid\Crm\Control\Presenter {
+abstract class BasePresenter extends \NAttreid\Crm\Control\ModulePresenter {
 
     use \NAttreid\VPaginator\PaginatorTrait;
 }
