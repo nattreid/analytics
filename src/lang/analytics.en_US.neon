@@ -3,9 +3,9 @@ interval: 'Interval'
 
 tracking:
     title: "Web tracking"
-    pageVisits: "Page visits"
-    clickTracking: "Clicks"
-    visits: "Visits"
+    pageVisits.title: "Page visits"
+    clickTracking.title: "Clicks"
+    visits.title: "Visits"
     visitsByDay: "Visits by day"
     visitsByHour: "Visits by hour"
     page: "Page"
