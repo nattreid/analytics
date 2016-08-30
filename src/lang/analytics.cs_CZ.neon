@@ -3,9 +3,9 @@ interval: 'Období'
 
 tracking:
     title: "Sledování webu"
-    pageVisits: "Návštěvy stránek"
-    clickTracking: "Kliky"
-    visits: "Návštevy"
+    pageVisits.title: "Návštěvy stránek"
+    clickTracking.title: "Kliky"
+    visits.title: "Návštevy"
     visitsByDay: "Počet návštev po dnech"
     visitsByHour: "Počet návštev po hodinách"
     page: "Stránka"
