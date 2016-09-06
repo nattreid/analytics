@@ -1,7 +1,7 @@
 /* **************************** pageVisits.js ******************************* */
 
 $(document).ready(function () {
-    $('#analytics-pageVisits input[name="interval"]').on('change', function (ev, picker) {
+    $('#analytics-pageVisits').find('input[name="interval"]').on('change', function () {
         $(this).closest('form').submit();
     });
 });

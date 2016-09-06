@@ -1,25 +1,28 @@
 {block title}{_'analytics.tracking.pageVisits.title'}{/block}
 {block content}
-    {panel id => analytics-pageVisits, class => analytics-extension}
-        {control searchForm}
-        <br/>
-        {snippet stats}
-            {ifset $visitsPages}
-                {view}
-                    <table class="stats">
-                        <tr>
-                            <th>{_'analytics.tracking.page'}</th>
-                            <th>{_'analytics.tracking.countVisits'}</th>
-                            <th>{_'analytics.tracking.countViews'}</th>
-                        </tr>
-                        <tr n:foreach="$visitsPages as $page" class="{$iterator->counter % 2 == 0 ? 'even' : 'odd'}">
-                            <td><a href="{link //:Front:Homepage:}{$page->page}" target="_blank">/{$page->page|truncate:60}</a></td> 
-                            <td>{$page->visits}</td>
-                            <td>{$page->views}</td>
-                        </tr>
-                    </table>
-                    {control paginator}
-                {/view}
-            {/ifset}
-        {/snippet}
-    {/panel}
+{panel id => analytics-pageVisits, class => analytics-extension}
+    {control searchForm}
+    <br/>
+    {snippet stats}
+        {ifset $visitsPages}
+            {view}
+                <table class="stats">
+                    <tr>
+                        <th>{_'analytics.tracking.page'}</th>
+                        <th>{_'analytics.tracking.countVisits'}</th>
+                        <th>{_'analytics.tracking.countViews'}</th>
+                    </tr>
+                    <tr n:foreach="$visitsPages as $page" class="{$iterator->counter % 2 == 0 ? 'even' : 'odd'}">
+                        <td>
+                            <a href="{link //:Front:Homepage:}{$page->page}"
+                               target="_blank">/{$page->page|truncate:60}</a>
+                        </td>
+                        <td>{$page->visits}</td>
+                        <td>{$page->views}</td>
+                    </tr>
+                </table>
+                {control paginator}
+            {/view}
+        {/ifset}
+    {/snippet}
+{/panel}

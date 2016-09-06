@@ -1,20 +1,21 @@
 /* ******************************* clicks.js ******************************** */
-function ClickTracking() {}
+function ClickTracking() {
+}
 
 ClickTracking.init = function () {
-    var canvas = $('#analytics-clickCharts #clicks');
+    var canvas = $('#analytics-clickCharts').find('#clicks');
     if (canvas.length > 0) {
         new Chart(canvas, {
             type: 'line',
             data: {
                 datasets: [{
-                        label: canvas.data('clicks-title'),
-                        data: canvas.data('clicks'),
-                        lineTension: 0.1,
-                        fill: false,
-                        backgroundColor: '#4BC0C0',
-                        borderColor: '#4BC0C0'
-                    },
+                    label: canvas.data('clicks-title'),
+                    data: canvas.data('clicks'),
+                    lineTension: 0.1,
+                    fill: false,
+                    backgroundColor: '#4BC0C0',
+                    borderColor: '#4BC0C0'
+                },
                     {
                         label: canvas.data('sum-title'),
                         data: canvas.data('sum'),
@@ -39,18 +40,18 @@ ClickTracking.init = function () {
                 },
                 scales: {
                     xAxes: [{
-                            type: 'time',
-                            time: {
-                                unit: 'day',
-                                tooltipFormat: 'D. MMMM YYYY',
-                                round: canvas.data('clicks').length <= 1 ? '' : 'day'
-                            }
-                        }],
+                        type: 'time',
+                        time: {
+                            unit: 'day',
+                            tooltipFormat: 'D. MMMM YYYY',
+                            round: canvas.data('clicks').length <= 1 ? '' : 'day'
+                        }
+                    }],
                     yAxes: [{
-                            ticks: {
-                                beginAtZero: true
-                            }
-                        }]
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
                 }
             }
         });
@@ -60,7 +61,7 @@ ClickTracking.init = function () {
 $(document).ready(function () {
     ClickTracking.init();
 
-    $('#analytics-clickCharts input[name="interval"], #analytics-clickCharts select').on('change', function (ev, picker) {
+    $('#analytics-clickCharts input[name="interval"], #analytics-clickCharts select').on('change', function () {
         $(this).closest('form').submit();
     });
 });

@@ -1,24 +1,27 @@
 /* ******************************* visits.js ******************************** */
-function VisitsCharts() {}
+function VisitsCharts() {
+}
 
 VisitsCharts.init = function () {
-    var visitsByDay = $('#analytics-visitsCharts #visitsByDay');
+    var visitsCharts = $('#analytics-visitsCharts');
+
+    var visitsByDay = visitsCharts.find('#visitsByDay');
     if (visitsByDay.length > 0) {
         new Chart(visitsByDay, {
             type: 'line',
             data: {
                 datasets: [{
-                        label: visitsByDay.data('title'),
-                        data: visitsByDay.data('data'),
-                        lineTension: 0.1,
-                        backgroundColor: 'rgba(75,192,192,0.4)',
-                        borderColor: 'rgba(75,192,192,1)',
-                        pointBackgroundColor: 'rgba(75,192,192,1)',
-                        pointHoverBackgroundColor: 'rgba(255,255,255,1)',
-                        pointHoverBorderColor: 'rgba(75,192,192,1)',
-                        pointHoverBorderWidth: 1,
-                        pointRadius: 4
-                    }]
+                    label: visitsByDay.data('title'),
+                    data: visitsByDay.data('data'),
+                    lineTension: 0.1,
+                    backgroundColor: 'rgba(75,192,192,0.4)',
+                    borderColor: 'rgba(75,192,192,1)',
+                    pointBackgroundColor: 'rgba(75,192,192,1)',
+                    pointHoverBackgroundColor: 'rgba(255,255,255,1)',
+                    pointHoverBorderColor: 'rgba(75,192,192,1)',
+                    pointHoverBorderWidth: 1,
+                    pointRadius: 4
+                }]
             },
             options: {
                 legend: {
@@ -26,24 +29,24 @@ VisitsCharts.init = function () {
                 },
                 scales: {
                     xAxes: [{
-                            type: 'time',
-                            time: {
-                                unit: 'day',
-                                tooltipFormat: 'D. MMMM YYYY',
-                                round: visitsByDay.data('data').length <= 1 ? '' : 'day'
-                            }
-                        }],
+                        type: 'time',
+                        time: {
+                            unit: 'day',
+                            tooltipFormat: 'D. MMMM YYYY',
+                            round: visitsByDay.data('data').length <= 1 ? '' : 'day'
+                        }
+                    }],
                     yAxes: [{
-                            ticks: {
-                                beginAtZero: true
-                            }
-                        }]
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
                 }
             }
         });
     }
 
-    var visitsByHour = $('#analytics-visitsCharts #visitsByHour');
+    var visitsByHour = visitsCharts.find('#visitsByHour');
     if (visitsByHour.length > 0) {
         var labels = [];
         for (var i = 0; i < 24; i++) {
@@ -55,13 +58,13 @@ VisitsCharts.init = function () {
             data: {
                 labels: labels,
                 datasets: [{
-                        label: visitsByHour.data('title'),
-                        data: visitsByHour.data('data'),
-                        backgroundColor: 'rgba(75,192,192,0.4)',
-                        borderColor: 'rgba(75,192,192,1)',
-                        pointBackgroundColor: 'rgba(75,192,192,1)',
-                        pointHoverBackgroundColor: 'rgba(255,255,255,1)'
-                    }]
+                    label: visitsByHour.data('title'),
+                    data: visitsByHour.data('data'),
+                    backgroundColor: 'rgba(75,192,192,0.4)',
+                    borderColor: 'rgba(75,192,192,1)',
+                    pointBackgroundColor: 'rgba(75,192,192,1)',
+                    pointHoverBackgroundColor: 'rgba(255,255,255,1)'
+                }]
             },
             options: {
                 legend: {
@@ -69,10 +72,10 @@ VisitsCharts.init = function () {
                 },
                 scales: {
                     yAxes: [{
-                            ticks: {
-                                beginAtZero: true
-                            }
-                        }]
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
                 }
             }
         });
@@ -82,7 +85,7 @@ VisitsCharts.init = function () {
 $(document).ready(function () {
     VisitsCharts.init();
 
-    $('#analytics-visitsCharts input[name="interval"]').on('change', function (ev, picker) {
+    $('#analytics-visitsCharts').find('input[name="interval"]').on('change', function () {
         $(this).closest('form').submit();
     });
 });

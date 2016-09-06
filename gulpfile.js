@@ -1,8 +1,8 @@
 var gulp = require('gulp'),
-        less = require('gulp-less'),
-        minify = require('gulp-clean-css'),
-        uglify = require('gulp-uglify'),
-        concat = require('gulp-concat');
+    less = require('gulp-less'),
+    minify = require('gulp-clean-css'),
+    uglify = require('gulp-uglify'),
+    concat = require('gulp-concat');
 
 var paths = {
     'dev': {
@@ -15,23 +15,23 @@ var paths = {
 
 gulp.task('css', function () {
     return gulp.src(paths.dev.less + '*.less')
-            .pipe(less())
-            .pipe(concat('analytics.css'))
-            .pipe(gulp.dest(paths.production));
+        .pipe(less())
+        .pipe(concat('analytics.css'))
+        .pipe(gulp.dest(paths.production));
 });
 
 gulp.task('cssMin', function () {
     return gulp.src(paths.dev.less + '*.less')
-            .pipe(less())
-            .pipe(minify({keepSpecialComments: 0}))
-            .pipe(concat('analytics.min.css'))
-            .pipe(gulp.dest(paths.production));
+        .pipe(less())
+        .pipe(minify({keepSpecialComments: 0}))
+        .pipe(concat('analytics.min.css'))
+        .pipe(gulp.dest(paths.production));
 });
 
 gulp.task('js', function () {
     return gulp.src(paths.dev.js + '*.js')
-            .pipe(concat('analytics.js'))
-            .pipe(gulp.dest(paths.production));
+        .pipe(concat('analytics.js'))
+        .pipe(gulp.dest(paths.production));
 });
 
 gulp.task('jsBoundled', function () {
@@ -39,15 +39,15 @@ gulp.task('jsBoundled', function () {
         paths.dev.vendor + 'Chart.js/dist/Chart.js',
         paths.dev.js + '*.js'
     ])
-            .pipe(concat('analytics.boundled.js'))
-            .pipe(gulp.dest(paths.production));
+        .pipe(concat('analytics.boundled.js'))
+        .pipe(gulp.dest(paths.production));
 });
 
 gulp.task('jsMin', function () {
     return gulp.src(paths.dev.js + '*.js')
-            .pipe(uglify())
-            .pipe(concat('analytics.min.js'))
-            .pipe(gulp.dest(paths.production));
+        .pipe(uglify())
+        .pipe(concat('analytics.min.js'))
+        .pipe(gulp.dest(paths.production));
 });
 
 gulp.task('jsBoundledMin', function () {
@@ -55,9 +55,9 @@ gulp.task('jsBoundledMin', function () {
         paths.dev.vendor + 'Chart.js/dist/Chart.js',
         paths.dev.js + '*.js'
     ])
-            .pipe(uglify())
-            .pipe(concat('analytics.boundled.min.js'))
-            .pipe(gulp.dest(paths.production));
+        .pipe(uglify())
+        .pipe(concat('analytics.boundled.min.js'))
+        .pipe(gulp.dest(paths.production));
 });
 
 gulp.task('watch', function () {
