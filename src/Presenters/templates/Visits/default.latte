@@ -5,10 +5,10 @@
     <br/>
     {snippet stats}
         <h2>{_'analytics.tracking.visitsByDay'}</h2>
-        <canvas id="visitsByDay" data-title="{_'analytics.tracking.visits'}" data-data="{$visitsByDay}"
+        <canvas id="visitsByDay" data-title="{_'analytics.tracking.visitsByDay'}" data-data="{$visitsByDay}"
                 height="{$user->isMobile() ? 100 : 50}"></canvas>
         <h2>{_'analytics.tracking.visitsByHour'}</h2>
-        <canvas id="visitsByHour" data-title="{_'analytics.tracking.visits'}" data-data="{$visitsByHour}"
+        <canvas id="visitsByHour" data-title="{_'analytics.tracking.visitsByHour'}" data-data="{$visitsByHour}"
                 height="{$user->isMobile() ? 100 : 50}"></canvas>
         <script type="text/javascript" n:if="$presenter->isAjax()">
             VisitsCharts.init();
