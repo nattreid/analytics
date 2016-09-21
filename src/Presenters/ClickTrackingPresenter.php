@@ -47,7 +47,6 @@ class ClickTrackingPresenter extends BasePresenter
 
 	public function renderDefault()
 	{
-		/* @var $form Form */
 		$form = $this['searchForm'];
 		$interval = $form['interval']->getValue();
 		$group = $form['group']->getValue();

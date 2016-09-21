@@ -1,13 +1,14 @@
 <?php
 
 namespace NAttreid\Analytics\DI;
+use NAttreid\Crm\DI\ModuleExtension;
 
 /**
  * Rozsireni
  *
  * @author Attreid <attreid@gmail.com>
  */
-class AnalyticsExtension extends \NAttreid\Crm\DI\ModuleExtension
+class AnalyticsExtension extends ModuleExtension
 {
 
 	protected $namespace = 'analytics';

@@ -1,14 +1,16 @@
 <?php
 
 namespace NAttreid\Analytics\Presenters;
+use NAttreid\Crm\Control\ExtensionPresenter;
+use NAttreid\VPaginator\PaginatorTrait;
 
 /**
  * Zakladni presenter pro Analytics presentery
  *
  * @author Attreid <attreid@gmail.com>
  */
-abstract class BasePresenter extends \NAttreid\Crm\Control\ExtensionPresenter
+abstract class BasePresenter extends ExtensionPresenter
 {
 
-	use \NAttreid\VPaginator\PaginatorTrait;
+	use PaginatorTrait;
 }
