@@ -16,7 +16,7 @@ class ClickTrackingPresenter extends BasePresenter
 
 	/** @var Tracking */
 	private $tracking;
-	private $view = FALSE;
+	private $view = false;
 
 	public function __construct(Tracking $tracking)
 	{
@@ -37,7 +37,7 @@ class ClickTrackingPresenter extends BasePresenter
 
 		$form->onSuccess[] = function (Form $form, $values) {
 			if (!empty($values->group)) {
-				$this->view = TRUE;
+				$this->view = true;
 			}
 			$this->redrawControl('stats');
 		};

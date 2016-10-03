@@ -54,7 +54,7 @@ class PageVisitsPresenter extends BasePresenter
 
 	public function renderDefault()
 	{
-		if ($this->interval !== NULL) {
+		if ($this->interval !== null) {
 			$visitsPages = $this->tracking->findPages(Range::createFromString($this->interval));
 			$this->setPaginator('paginator', $visitsPages);
 			$this->template->visitsPages = $visitsPages;

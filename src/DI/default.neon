@@ -7,6 +7,6 @@ menu:
             link: ''
         pageVisits:
             link: ''
-            arguments: [interval: NULL]
+            arguments: [interval: null]
         clickTracking:
             link: ''
