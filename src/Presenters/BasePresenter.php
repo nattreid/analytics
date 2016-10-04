@@ -1,7 +1,8 @@
 <?php
 
 namespace NAttreid\Analytics\Presenters;
-use NAttreid\Crm\Control\ExtensionPresenter;
+
+use NAttreid\Crm\Control\ModulePresenter;
 use NAttreid\VPaginator\PaginatorTrait;
 
 /**
@@ -9,7 +10,7 @@ use NAttreid\VPaginator\PaginatorTrait;
  *
  * @author Attreid <attreid@gmail.com>
  */
-abstract class BasePresenter extends ExtensionPresenter
+abstract class BasePresenter extends ModulePresenter
 {
 
 	use PaginatorTrait;
