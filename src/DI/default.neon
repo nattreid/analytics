@@ -4,9 +4,9 @@ position: 1
 menu:
     tracking:
         visits:
-            link: ''
+            link:
         pageVisits:
-            link: ''
+            link:
             arguments: [interval: null]
         clickTracking:
-            link: ''
+            link:
