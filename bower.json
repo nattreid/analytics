@@ -16,7 +16,7 @@
   ],
   "dependencies": {
     "crm": "git@git.newtravel.cz:nattreid/crm.git#latest",
-    "tracking": "git@git.newtravel.cz:nattreid/tracking.git#~1.0",
+    "tracking": "git@git.newtravel.cz:nattreid/tracking.git#latest",
     "Chart.js": "~2.1"
   },
   "resolutions": {
