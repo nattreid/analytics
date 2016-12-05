@@ -3,7 +3,6 @@
 namespace NAttreid\Analytics\Presenters;
 
 use NAttreid\Crm\Control\ModulePresenter;
-use NAttreid\VPaginator\PaginatorTrait;
 
 /**
  * Zakladni presenter pro Analytics presentery
@@ -13,5 +12,4 @@ use NAttreid\VPaginator\PaginatorTrait;
 abstract class BasePresenter extends ModulePresenter
 {
 
-	use PaginatorTrait;
 }

@@ -16,6 +16,7 @@ class ClickTrackingPresenter extends BasePresenter
 
 	/** @var Tracking */
 	private $tracking;
+
 	private $view = false;
 
 	public function __construct(Tracking $tracking)

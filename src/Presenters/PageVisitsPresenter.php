@@ -5,6 +5,7 @@ namespace NAttreid\Analytics\Presenters;
 use NAttreid\Form\Form;
 use NAttreid\Tracking\Tracking;
 use NAttreid\Utils\Range;
+use NAttreid\VPaginator\VPaginator;
 
 /**
  * Navstevy stranek
@@ -43,10 +44,10 @@ class PageVisitsPresenter extends BasePresenter
 
 	protected function createComponentPaginator()
 	{
-		$control = $this->createPaginator(50);
+		$control = new VPaginator(50);
 		$control->setAjaxRequest();
 		$control->setNoAjaxHistory();
-		$control->onShowPage[] = function () {
+		$control->onClickPage[] = function () {
 			$this->redrawControl('stats');
 		};
 		return $control;
@@ -56,7 +57,7 @@ class PageVisitsPresenter extends BasePresenter
 	{
 		if ($this->interval !== null) {
 			$visitsPages = $this->tracking->findPages(Range::createFromString($this->interval));
-			$this->setPaginator('paginator', $visitsPages);
+			$this['paginator']->setPagination($visitsPages);
 			$this->template->visitsPages = $visitsPages;
 		}
 	}
