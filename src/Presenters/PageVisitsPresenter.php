@@ -47,7 +47,7 @@ class PageVisitsPresenter extends BasePresenter
 		$control = new VPaginator(50);
 		$control->setAjaxRequest();
 		$control->setNoAjaxHistory();
-		$control->onClickPage[] = function () {
+		$control->onClick[] = function () {
 			$this->redrawControl('stats');
 		};
 		return $control;
