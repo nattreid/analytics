@@ -1,6 +1,6 @@
 <?php
 
-namespace NAttreid\Analytics\Controls;
+namespace NAttreid\Analytics\Presenters;
 
 /**
  * Domovska stranka statistik

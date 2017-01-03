@@ -1,6 +1,6 @@
 <?php
 
-namespace NAttreid\Analytics\Controls;
+namespace NAttreid\Analytics\Presenters;
 
 use NAttreid\Form\Form;
 use NAttreid\Tracking\Tracking;
