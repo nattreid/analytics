@@ -1,4 +1,4 @@
-# Analytics pro CRM
+# Analytics pro CMS
 
 ## Nastavení
 Přidat extension do **config.neon**

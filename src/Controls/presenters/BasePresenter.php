@@ -2,7 +2,7 @@
 
 namespace NAttreid\Analytics\Presenters;
 
-use NAttreid\Crm\Control\ModulePresenter;
+use NAttreid\Cms\Control\ModulePresenter;
 
 /**
  * Zakladni presenter pro Analytics presentery

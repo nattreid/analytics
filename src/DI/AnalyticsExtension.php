@@ -1,7 +1,7 @@
 <?php
 
 namespace NAttreid\Analytics\DI;
-use NAttreid\Crm\DI\ModuleExtension;
+use NAttreid\Cms\DI\ModuleExtension;
 
 /**
  * Rozsireni

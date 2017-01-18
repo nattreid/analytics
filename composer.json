@@ -1,6 +1,6 @@
 {
   "name": "nattreid/analytics",
-  "description": "Analytics for CRM",
+  "description": "Analytics for CMS",
   "type": "library",
   "license": [
     "Unlicense"
@@ -19,7 +19,7 @@
   ],
   "require": {
     "php": ">= 5.6",
-    "nattreid/crm": "~1.0",
+    "nattreid/cms": "~1.0",
     "nattreid/tracking": "~1.0",
     "nattreid/vPaginator": "~1.0"
   },

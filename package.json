@@ -1,6 +1,6 @@
 {
   "name": "analytics",
-  "description": "Analytics for CRM",
+  "description": "Analytics for CMS",
   "main": "gulpfile.js",
   "repository": {
     "type": "git",
