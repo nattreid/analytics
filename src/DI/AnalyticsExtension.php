@@ -1,6 +1,9 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace NAttreid\Analytics\DI;
+
 use NAttreid\Cms\DI\ModuleExtension;
 
 /**

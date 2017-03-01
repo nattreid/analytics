@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace NAttreid\Analytics\Presenters;
 
 use NAttreid\Form\Form;
@@ -17,6 +19,7 @@ class ClickTrackingPresenter extends BasePresenter
 	/** @var Tracking */
 	private $tracking;
 
+	/** @var bool */
 	private $view = false;
 
 	public function __construct(Tracking $tracking)
