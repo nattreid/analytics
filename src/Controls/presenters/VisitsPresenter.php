@@ -47,7 +47,7 @@ class VisitsPresenter extends BasePresenter
 		$visitsByDay = $this->tracking->findVisitsDays($interval);
 		$arr = [];
 		foreach ($visitsByDay as $row) {
-			$datefield = ((strtotime($row->datefield) + 1) * 1000);
+			$datefield = ((strtotime((string)$row->datefield) + 1) * 1000);
 			$arr[] = "{\"x\": $datefield, \"y\": $row->visits}";
 		}
 		$this->template->visitsByDay = '[' . implode(',', $arr) . ']';
