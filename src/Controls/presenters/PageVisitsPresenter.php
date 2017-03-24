@@ -1,13 +1,13 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace NAttreid\Analytics\Presenters;
 
 use NAttreid\Form\Form;
 use NAttreid\Tracking\Tracking;
 use NAttreid\Utils\Range;
-use NAttreid\VPaginator\VPaginator;
+use NAttreid\VisualPaginator\VisualPaginator;
 
 /**
  * Navstevy stranek
@@ -37,7 +37,7 @@ class PageVisitsPresenter extends BasePresenter
 		$form->addDateRange('interval', 'analytics.interval');
 
 		$form->onSuccess[] = function (Form $form, $values) {
-			$this->interval = (string)$values->interval;
+			$this->interval = (string) $values->interval;
 			$this->redrawControl('stats');
 		};
 
@@ -46,7 +46,7 @@ class PageVisitsPresenter extends BasePresenter
 
 	protected function createComponentPaginator()
 	{
-		$control = new VPaginator(50);
+		$control = new VisualPaginator(50);
 		$control->setAjaxRequest();
 		$control->setNoAjaxHistory();
 		$control->onClick[] = function () {
