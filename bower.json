@@ -1,8 +1,8 @@
 {
-  "name": "analytics",
+  "name": "nattreid-analytics",
   "description": "Analytics for CMS",
   "license": [
-    "Unlicense"
+    "MIT"
   ],
   "authors": [
     {
@@ -15,8 +15,8 @@
     "*.json"
   ],
   "dependencies": {
-    "cms": "git@git.newtravel.cz:nattreid/cms.git#latest",
-    "tracking": "git@git.newtravel.cz:nattreid/tracking.git#latest",
+    "nattreid-cms": "~1.2",
+    "nattreid-tracking": "~1.1",
     "Chart.js": "~2.1"
   },
   "resolutions": {

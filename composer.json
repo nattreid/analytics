@@ -3,7 +3,7 @@
   "description": "Analytics for CMS",
   "type": "library",
   "license": [
-    "Unlicense"
+    "MIT"
   ],
   "authors": [
     {
@@ -11,20 +11,14 @@
       "email": "attreid@gmail.com"
     }
   ],
-  "repositories": [
-    {
-      "type": "composer",
-      "url": "https://packages.newtravel.cz"
-    }
-  ],
   "require": {
     "php": ">= 7.0",
     "nattreid/cms": "~1.0",
     "nattreid/tracking": "~1.0",
-    "nattreid/vPaginator": "~1.0"
+    "nattreid/visual-paginator": "~1.0"
   },
   "require-dev": {
-    "nette/tester": "~1.8",
+    "nette/tester": "~1.7",
     "tracy/tracy": "~2.4"
   },
   "autoload": {
