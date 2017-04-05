@@ -15,12 +15,13 @@
     "*.json"
   ],
   "dependencies": {
-    "nattreid-cms": "~1.2",
-    "nattreid-tracking": "~1.1",
-    "Chart.js": "~2.1"
+    "nattreid-cms": "~1",
+    "nattreid-tracking": "~1",
+    "Chart.js": "~2"
   },
   "resolutions": {
-    "nette.ajax.js": "~2.1",
-    "nette-forms": "2.2 || 2.3"
+    "nette.ajax.js": "~2",
+    "jquery": "~3",
+    "nette-forms": "~2"
   }
 }
