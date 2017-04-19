@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace NAttreid\Analytics\Presenters;
 
@@ -12,7 +12,7 @@ namespace NAttreid\Analytics\Presenters;
 class HomepagePresenter extends BasePresenter
 {
 
-	public function actionDefault()
+	public function actionDefault(): void
 	{
 		$this->viewMobileMenu();
 	}

@@ -1,9 +1,10 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace NAttreid\Analytics\Presenters;
 
+use NAttreid\Form\Form;
 use NAttreid\Tracking\Tracking;
 use NAttreid\Utils\Range;
 
@@ -24,7 +25,7 @@ class VisitsPresenter extends BasePresenter
 		$this->tracking = $tracking;
 	}
 
-	protected function createComponentSearchForm()
+	protected function createComponentSearchForm(): Form
 	{
 		$form = $this->formFactory->create();
 		$form->setAjaxRequest();
@@ -39,7 +40,7 @@ class VisitsPresenter extends BasePresenter
 		return $form;
 	}
 
-	public function renderDefault()
+	public function renderDefault(): void
 	{
 		$form = $this['searchForm'];
 		$interval = $form['interval']->getValue();
@@ -47,7 +48,7 @@ class VisitsPresenter extends BasePresenter
 		$visitsByDay = $this->tracking->findVisitsDays($interval);
 		$arr = [];
 		foreach ($visitsByDay as $row) {
-			$datefield = ((strtotime((string)$row->datefield) + 1) * 1000);
+			$datefield = ((strtotime((string) $row->datefield) + 1) * 1000);
 			$arr[] = "{\"x\": $datefield, \"y\": $row->visits}";
 		}
 		$this->template->visitsByDay = '[' . implode(',', $arr) . ']';

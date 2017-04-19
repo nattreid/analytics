@@ -29,22 +29,25 @@ class PageVisitsPresenter extends BasePresenter
 	/** @persistent */
 	public $interval;
 
-	protected function createComponentSearchForm()
+	protected function createComponentSearchForm(): Form
 	{
 		$form = $this->formFactory->create();
 		$form->setAjaxRequest();
 
 		$form->addDateRange('interval', 'analytics.interval');
 
-		$form->onSuccess[] = function (Form $form, $values) {
-			$this->interval = (string) $values->interval;
-			$this->redrawControl('stats');
-		};
+		$form->onSuccess[] = [$this, 'searchFormSucceeded'];
 
 		return $form;
 	}
 
-	protected function createComponentPaginator()
+	public function searchFormSucceeded(Form $form, $values)
+	{
+		$this->interval = (string) $values->interval;
+		$this->redrawControl('stats');
+	}
+
+	protected function createComponentPaginator(): VisualPaginator
 	{
 		$control = new VisualPaginator(50);
 		$control->setAjaxRequest();
@@ -55,7 +58,7 @@ class PageVisitsPresenter extends BasePresenter
 		return $control;
 	}
 
-	public function renderDefault()
+	public function renderDefault(): void
 	{
 		if ($this->interval !== null) {
 			$visitsPages = $this->tracking->findPages(Range::createFromString($this->interval));

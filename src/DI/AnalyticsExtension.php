@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace NAttreid\Analytics\DI;
 
@@ -18,7 +18,7 @@ class AnalyticsExtension extends ModuleExtension
 	protected $dir = __DIR__;
 	protected $package = 'NAttreid\\';
 
-	public function beforeCompile()
+	public function beforeCompile(): void
 	{
 		parent::beforeCompile();
 		$this->addLoaderFile(__DIR__ . '/../../assets/analytics.min.css');

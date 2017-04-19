@@ -1,12 +1,13 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace NAttreid\Analytics\Presenters;
 
 use NAttreid\Form\Form;
 use NAttreid\Tracking\Tracking;
 use NAttreid\Utils\Range;
+use Nette\Utils\ArrayHash;
 
 /**
  * Kliky
@@ -28,7 +29,7 @@ class ClickTrackingPresenter extends BasePresenter
 		$this->tracking = $tracking;
 	}
 
-	protected function createComponentSearchForm()
+	protected function createComponentSearchForm(): Form
 	{
 		$form = $this->formFactory->create();
 		$form->setAjaxRequest();
@@ -39,17 +40,20 @@ class ClickTrackingPresenter extends BasePresenter
 		$form->addSelectUntranslated('group', 'analytics.tracking.clickGroup', $this->tracking->fetchGroupPairs())
 			->setPrompt($this->translate('form.none'));
 
-		$form->onSuccess[] = function (Form $form, $values) {
-			if (!empty($values->group)) {
-				$this->view = true;
-			}
-			$this->redrawControl('stats');
-		};
+		$form->onSuccess[] = [$this, 'searchFormSucceeded'];
 
 		return $form;
 	}
 
-	public function renderDefault()
+	public function searchFormSucceeded(Form $form, ArrayHash $values): void
+	{
+		if (!empty($values->group)) {
+			$this->view = true;
+		}
+		$this->redrawControl('stats');
+	}
+
+	public function renderDefault(): void
 	{
 		$form = $this['searchForm'];
 		$interval = $form['interval']->getValue();
