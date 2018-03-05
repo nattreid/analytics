@@ -7,4 +7,4 @@ extensions:
     - NAttreid\Analytics\DI\AnalyticsExtension
 ```
 
-Je třeba nastavit extension **Nattreid\Tracking**
+Je třeba nastavit extension **NAttreid\Tracking**
