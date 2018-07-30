@@ -63,9 +63,9 @@ class ClickTrackingPresenter extends BasePresenter
 			$clicksByDay = $this->tracking->findClicksByDay($group, $interval);
 			$clicks = $sum = $avg = [];
 			foreach ($clicksByDay as $row) {
-				$clicks[] = '{"x":' . ((strtotime($row->date) + 1) * 1000) . ', "y": ' . $row->num . '}';
-				$sum[] = '{"x":' . ((strtotime($row->date) + 1) * 1000) . ', "y": ' . ($row->sum ?: 0) . '}';
-				$avg[] = '{"x":' . ((strtotime($row->date) + 1) * 1000) . ', "y": ' . ($row->avg ?: 0) . '}';
+				$clicks[] = '{"x":' . ((strtotime((string) $row->date) + 1) * 1000) . ', "y": ' . $row->num . '}';
+				$sum[] = '{"x":' . ((strtotime((string) $row->date) + 1) * 1000) . ', "y": ' . ($row->sum ?: 0) . '}';
+				$avg[] = '{"x":' . ((strtotime((string) $row->date) + 1) * 1000) . ', "y": ' . ($row->avg ?: 0) . '}';
 			}
 			$this->template->clicks = '[' . implode(',', $clicks) . ']';
 			$this->template->sum = '[' . implode(',', $sum) . ']';
