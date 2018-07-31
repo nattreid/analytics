@@ -16,6 +16,13 @@
                     data-avg-title="{_'analytics.tracking.avg'}"
                     data-avg="{$avg}"
                     height="50"></canvas>
+            <h2>{_'analytics.tracking.clicksByValue'}</h2>
+            <canvas
+                    id="values"
+                    class="chart"
+                    data-labels="{$labels}"
+                    data-data="{$values}"
+                    height="50"></canvas>
             <script type="text/javascript" n:if="$presenter->isAjax()">
                 ClickTracking.init();
             </script>

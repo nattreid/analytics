@@ -56,22 +56,40 @@ class ClickTrackingPresenter extends BasePresenter
 	public function renderDefault(): void
 	{
 		$form = $this['searchForm'];
+		$groupId = $form['group']->getValue();
 		$interval = $form['interval']->getValue();
-		$group = $form['group']->getValue();
 
 		if ($this->view) {
-			$clicksByDay = $this->tracking->findClicksByDay($group, $interval);
-			$clicks = $sum = $avg = [];
-			foreach ($clicksByDay as $row) {
-				$clicks[] = '{"x":' . ((strtotime((string) $row->date) + 1) * 1000) . ', "y": ' . $row->num . '}';
-				$sum[] = '{"x":' . ((strtotime((string) $row->date) + 1) * 1000) . ', "y": ' . ($row->sum ?: 0) . '}';
-				$avg[] = '{"x":' . ((strtotime((string) $row->date) + 1) * 1000) . ', "y": ' . ($row->avg ?: 0) . '}';
-			}
-			$this->template->clicks = '[' . implode(',', $clicks) . ']';
-			$this->template->sum = '[' . implode(',', $sum) . ']';
-			$this->template->avg = '[' . implode(',', $avg) . ']';
+			$this->clickByDay($groupId, $interval);
+			$this->clickByValue($groupId, $interval);
 		}
 		$this->template->view = $this->view;
 	}
 
+	private function clickByDay(int $groupId, Range $interval)
+	{
+		$clicksByDay = $this->tracking->findClicksByDay($groupId, $interval);
+		$clicks = $sum = $avg = [];
+		foreach ($clicksByDay as $row) {
+			$clicks[] = '{"x":' . ((strtotime((string) $row->date) + 1) * 1000) . ', "y": ' . $row->num . '}';
+			$sum[] = '{"x":' . ((strtotime((string) $row->date) + 1) * 1000) . ', "y": ' . ($row->sum ?: 0) . '}';
+			$avg[] = '{"x":' . ((strtotime((string) $row->date) + 1) * 1000) . ', "y": ' . ($row->avg ?: 0) . '}';
+		}
+		$this->template->clicks = '[' . implode(',', $clicks) . ']';
+		$this->template->sum = '[' . implode(',', $sum) . ']';
+		$this->template->avg = '[' . implode(',', $avg) . ']';
+	}
+
+
+	private function clickByValue(int $groupId, Range $interval)
+	{
+		$clicksByValue = $this->tracking->findClicksValue($groupId, $interval);
+		$values = $labels = [];
+		foreach ($clicksByValue as $row) {
+			$labels[] = "\"$row->value\"";
+			$values[] = $row->num;
+		}
+		$this->template->labels = '[' . implode(',', $labels) . ']';
+		$this->template->values = '[' . implode(',', $values) . ']';
+	}
 }
