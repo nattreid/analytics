@@ -12,6 +12,7 @@ tracking:
     countVisits: "Počet návštev"
     countViews: "Počet zobrazení"
     clicksByDay: "Počet kliků po dnech"
+    clicksByValue: "Počet kliků podle hodnoty"
     clickGroup: "Skupina"
     clicks: "Kliky"
     avg: "Průměrná hodnota"

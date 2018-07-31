@@ -12,6 +12,7 @@ tracking:
     countVisits: "Count visits"
     countViews: "Count views"
     clicksByDay: "Clicks by day"
+    clicksByValue: "Clicks by value"
     clickGroup: "Group"
     clicks: "Clicks"
     avg: "Average value"
