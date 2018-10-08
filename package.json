@@ -1,18 +1,24 @@
 {
   "name": "nattreid-analytics",
   "description": "Analytics for CMS",
-  "main": "gulpfile.js",
+  "version": "1.4.0",
+  "main": "./assets/analytics.js",
   "repository": {
-    "type": "git",
-    "url": "git@github.com:nattreid/analytics.git"
+	"type": "git",
+	"url": "git@github.com:nattreid/analytics.git"
   },
   "author": "Attreid",
   "license": "MIT",
+  "dependencies": {
+	"nattreid-cms": "~1",
+	"nattreid-tracking": "~1",
+	"chart.js": "~2"
+  },
   "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-clean-css": "^2.0.12",
-    "gulp-less": "^3.1.0",
-    "gulp-concat": "^2.6.0",
-    "gulp-uglify": "^2.0.0"
+	"gulp": "~4",
+	"gulp-clean-css": "~3",
+	"gulp-less": "~4",
+	"gulp-concat": "~2",
+	"gulp-uglify": "~3"
   }
 }

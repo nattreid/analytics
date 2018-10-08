@@ -8,7 +8,7 @@ var paths = {
     'dev': {
         'js': './resources/assets/js/',
         'less': './resources/assets/less/',
-        'vendor': './resources/assets/vendor/'
+        'vendor': './node_modules/'
     },
     'production': './assets/'
 };
@@ -36,7 +36,7 @@ gulp.task('js', function () {
 
 gulp.task('jsBoundled', function () {
     return gulp.src([
-        paths.dev.vendor + 'Chart.js/dist/Chart.js',
+        paths.dev.vendor + 'chart.js/dist/Chart.js',
         paths.dev.js + '*.js'
     ])
         .pipe(concat('analytics.boundled.js'))
@@ -52,7 +52,7 @@ gulp.task('jsMin', function () {
 
 gulp.task('jsBoundledMin', function () {
     return gulp.src([
-        paths.dev.vendor + 'Chart.js/dist/Chart.js',
+        paths.dev.vendor + 'chart.js/dist/Chart.js',
         paths.dev.js + '*.js'
     ])
         .pipe(uglify())
@@ -61,8 +61,8 @@ gulp.task('jsBoundledMin', function () {
 });
 
 gulp.task('watch', function () {
-    gulp.watch(paths.dev.js + '/*.js', ['js', 'jsBoundled', 'jsMin', 'jsBoundledMin']);
-    gulp.watch(paths.dev.less + '/*.less', ['css', 'cssMin']);
+    gulp.watch(paths.dev.js + '/*.js', gulp.series('js', 'jsBoundled', 'jsMin', 'jsBoundledMin'));
+    gulp.watch(paths.dev.less + '/*.less', gulp.series('css', 'cssMin'));
 });
 
-gulp.task('default', ['js', 'jsBoundled', 'jsMin', 'jsBoundledMin', 'css', 'cssMin', 'watch']); 
+gulp.task('default', gulp.series('js', 'jsBoundled', 'jsMin', 'jsBoundledMin', 'css', 'cssMin', 'watch'));
